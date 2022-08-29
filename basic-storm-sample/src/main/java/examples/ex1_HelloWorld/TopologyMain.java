@@ -7,6 +7,7 @@ import org.apache.storm.topology.TopologyBuilder;
 
 
 public class TopologyMain {
+
     public static void main(String[] args) throws InterruptedException {
 
         //Build Topology
@@ -28,4 +29,6 @@ public class TopologyMain {
         finally{
             cluster.shutdown();}
     }
+
 }
+
