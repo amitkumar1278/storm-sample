@@ -7,7 +7,6 @@ import org.apache.storm.topology.TopologyBuilder;
 
 
 public class TopologyMain {
-
     public static void main(String[] args) throws InterruptedException {
 
         //Build Topology
@@ -16,7 +15,6 @@ public class TopologyMain {
         builder.setBolt("My-First-Bolt", new myFirstBolt()).shuffleGrouping("My-First-Spout");
 
         //Configuration
-        ///
         Config conf = new Config();
         conf.setDebug(true);
 
@@ -30,6 +28,4 @@ public class TopologyMain {
         finally{
             cluster.shutdown();}
     }
-
 }
-
