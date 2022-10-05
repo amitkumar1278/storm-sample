@@ -156,7 +156,7 @@ After configuration, we can start the zookeeper server.
 ~/Storm/zookeeper-3.8.0$ ./bin/zkServer.sh start`
 ```
 
-![start_zookeeper.png](assets/start_zookeeper.png)
+![start_zookeeper.png](assets/start_zookeeper.png?t=1664930304793)
 
 **Step 2.5 Start ZooKeeper CLI**
 
@@ -166,7 +166,7 @@ CLI of zookeeper can be started using the below command.
 ~/Storm/zookeeper-3.8.0$ ./bin/zkCli.sh'
 ```
 
-![start_zookeeper_zkcli.png](assets/start_zookeeper_zkcli.png?t=1664331963076)
+![start_zookeeper_zkcli.png](assets/start_zookeeper_zkcli.png?t=1664930443350)
 
 ## **3. Apache Storm Installation**
 
@@ -191,7 +191,7 @@ Use the below command to extract the tar file of the Storm.
 ~$ mv apache-storm-2.4.0 storm-2.4.0
 ```
 
-![storm_untar.png](assets/storm_untar.png)
+![storm_untar.png](assets/storm_untar.png?t=1664930547297)
 
 ### **3.3 Configuration of Apache Storm**
 
@@ -216,6 +216,12 @@ supervisor.slots.ports:
 - 6703
 ```
 
+
+![storm_configuration.png](assets/storm_configuration.png)
+
+Press CTRL + O to save the file. Once the file is saved press CTRL+X to exit from the editor.
+
+
 OR try with below. In Storm version  **2.1.0** version `nimbus.host` has been replaced by the array option `nimbus.seeds`.
 
 ```
@@ -225,10 +231,7 @@ storm.zookeeper.servers:
      - "localhost"
 nimbus.seeds: [ "localhost" ]
 ```
-
-![storm_configuration.png](assets/storm_configuration.png)
-
-Press CTRL + O to save the file. Once the file is saved press CTRL+X to exit from the editor.
+![storm_configuration_2.png](assets/storm_configuration_2.png)
 
 ### **3.4 Start Nimbus Node**
 
@@ -236,17 +239,19 @@ Use the below command to start the Nimbus node.
 
 `~/Storm/storm-2.4.0$ ./bin/storm nimbus`
 
-![start_nimbus.png](assets/start_nimbus.png)
+![start_nimbus.png](assets/start_nimbus.png?t=1664930972547)
 
 Use the below command to start the Supervisor.
 
 `~/Storm/storm-2.4.0$ ./bin/storm supervisor`
 
+![start_supervisor.png](assets/start_supervisor.png)
+
 Use the below command to start the UI.
 
 `~/Storm/storm-2.4.0$ ./bin/storm ui`
 
-![start_ui.png](assets/start_ui.png)
+![start_ui.png](assets/start_ui.png?t=1664931176564)
 
 
 
@@ -362,5 +367,4 @@ org.apache.storm.utils.NimbusLeaderNotFoundException: Could not find leader nimb
 	at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:683)
 	at java.base/java.lang.Thread.run(Thread.java:829)
 ```
-
 Solution:
