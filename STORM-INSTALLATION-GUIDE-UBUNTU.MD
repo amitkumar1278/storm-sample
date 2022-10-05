@@ -216,11 +216,9 @@ supervisor.slots.ports:
 - 6703
 ```
 
-
 ![storm_configuration.png](assets/storm_configuration.png)
 
 Press CTRL + O to save the file. Once the file is saved press CTRL+X to exit from the editor.
-
 
 OR try with below. In Storm version  **2.1.0** version `nimbus.host` has been replaced by the array option `nimbus.seeds`.
 
@@ -231,6 +229,7 @@ storm.zookeeper.servers:
      - "localhost"
 nimbus.seeds: [ "localhost" ]
 ```
+
 ![storm_configuration_2.png](assets/storm_configuration_2.png)
 
 ### **3.4 Start Nimbus Node**
@@ -253,8 +252,6 @@ Use the below command to start the UI.
 
 ![start_ui.png](assets/start_ui.png?t=1664931176564)
 
-
-
 ### 
 
 **3.6 Open Storm UI in Web Browser**
@@ -267,12 +264,48 @@ Once Storm UI is opened in the web browser post that we can see the below screen
 
 ![storm_user_interface.png](assets/storm_user_interface.png?t=1664931347770)
 
+# Notes:
+
+### 1. Check if demon is working fine
+
+---
+
+```
+~/Storm/storm-2.4.0$ jps
+```
+
+QuorumPeerMain is demon of zookeeper, running this demon indicates zookeper is working fine.
+
+![jpsdemonprogram.png](assets/jps-demon-program.png)
+
+# 2. bashrc setup for storm
+
+bashrc is center repository where we set all the environment variable path.
+
+edit bashrc for Storm and zookeeper environment variable and apply changes using below commands.
+
+```
+amit@amit-Lenovo-ideapad-520-15IKB:~$ gedit ~/.bashrc
+amit@amit-Lenovo-ideapad-520-15IKB:~$ source ~/.bashrc
+```
+
+![bashrc_storm_zookeeper.png](assets/bashrc_storm_zookeeper.png)
+
+by doing above configuration we can directly run storm or zookeeper either from home directory or any other directory, like below:
+
+```
+amit@amit-Lenovo-ideapad-520-15IKB:~$ zkServer.sh start
+amit@amit-Lenovo-ideapad-520-15IKB:~$ storm nimbus
+amit@amit-Lenovo-ideapad-520-15IKB:~$ storm supervisor
+amit@amit-Lenovo-ideapad-520-15IKB:~$ storm ui
+```
 
 
+
+check http://localhost:8080/
 
 
 # Common Error while starting server:
-
 
 ### use below command for `java.net.BindException: Address already in use`
 
@@ -288,12 +321,9 @@ $ sudo lsof -i -P -n | grep LISTEN
 
 $ kill -9 {PID}
 
-
 ### 500 Server Error (NimbusLeaderNotFoundException)
 
 ---
-
-
 
 ```
 org.apache.storm.utils.NimbusLeaderNotFoundException: Could not find leader nimbus from seed hosts [localhost]. Did you specify a valid list of nimbus hosts for config nimbus.seeds?
@@ -367,4 +397,5 @@ org.apache.storm.utils.NimbusLeaderNotFoundException: Could not find leader nimb
 	at org.eclipse.jetty.util.thread.QueuedThreadPool$2.run(QueuedThreadPool.java:683)
 	at java.base/java.lang.Thread.run(Thread.java:829)
 ```
+
 Solution:
