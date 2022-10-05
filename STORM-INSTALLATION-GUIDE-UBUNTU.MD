@@ -278,7 +278,7 @@ QuorumPeerMain is demon of zookeeper, running this demon indicates zookeper is w
 
 ![jpsdemonprogram.png](assets/jps-demon-program.png)
 
-# 2. bashrc setup for storm
+### 2. bashrc setup for storm
 
 bashrc is center repository where we set all the environment variable path.
 
@@ -295,19 +295,23 @@ by doing above configuration we can directly run storm or zookeeper either from 
 
 ```
 amit@amit-Lenovo-ideapad-520-15IKB:~$ zkServer.sh start
+amit@amit-Lenovo-ideapad-520-15IKB:~$ zkCli.sh
+
 amit@amit-Lenovo-ideapad-520-15IKB:~$ storm nimbus
 amit@amit-Lenovo-ideapad-520-15IKB:~$ storm supervisor
 amit@amit-Lenovo-ideapad-520-15IKB:~$ storm ui
 ```
 
-
-
 check http://localhost:8080/
 
+```
+bin/zkServer.sh stop
+```
 
-# Common Error while starting server:
 
-### use below command for `java.net.BindException: Address already in use`
+### 3. Common Error while starting server:
+
+#### 3.1 use below command for `java.net.BindException: Address already in use`
 
 ---
 
@@ -321,7 +325,7 @@ $ sudo lsof -i -P -n | grep LISTEN
 
 $ kill -9 {PID}
 
-### 500 Server Error (NimbusLeaderNotFoundException)
+#### 3.2 500 Server Error (NimbusLeaderNotFoundException)
 
 ---
 
