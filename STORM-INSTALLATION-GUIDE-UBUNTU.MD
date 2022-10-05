@@ -260,7 +260,7 @@ Note1: If Storm UI is not starting on 8080 port which is the default port and th
 
 Once Storm UI is opened in the web browser post that we can see the below screen.
 
-![cloudduggu storm user interface](https://www.cloudduggu.com/storm/installation/cloudduggu_storm_user_interface.png)
+![storm_user_interface.png](/home/amit/Development/storm-material/storm-sample/assets/storm_user_interface.png)
 
 
 
