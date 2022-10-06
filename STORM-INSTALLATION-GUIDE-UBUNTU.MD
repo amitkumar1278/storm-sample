@@ -308,7 +308,6 @@ check http://localhost:8080/
 bin/zkServer.sh stop
 ```
 
-
 ### 3. Common Error while starting server:
 
 #### 3.1 use below command for `java.net.BindException: Address already in use`
@@ -403,3 +402,8 @@ org.apache.storm.utils.NimbusLeaderNotFoundException: Could not find leader nimb
 ```
 
 Solution:
+
+
+# Execute Storm Application:
+
+amit@amit-Lenovo-ideapad-520-15IKB:~$ storm local '/home/amit/Development/storm-material/storm-sample/basic-storm-sample/target/basic-storm-sample-1.0-SNAPSHOT.jar' examples.ex1_HelloWorld.TopologyMain  My-First-Topology
