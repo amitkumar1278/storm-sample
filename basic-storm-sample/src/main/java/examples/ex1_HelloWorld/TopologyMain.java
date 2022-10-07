@@ -23,7 +23,9 @@ public class TopologyMain {
         //Submit Topology to cluster
         LocalCluster cluster = new LocalCluster();
         try{
+            System.out.println("Submitting topology ");
             cluster.submitTopology("My-First-Topology", conf, builder.createTopology());
+            System.out.println("Submission done");
             Thread.sleep(1000);
         }
 

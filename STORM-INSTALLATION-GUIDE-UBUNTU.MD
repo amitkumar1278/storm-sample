@@ -403,7 +403,6 @@ org.apache.storm.utils.NimbusLeaderNotFoundException: Could not find leader nimb
 
 Solution:
 
-
 # Execute Storm Application:
 
-amit@amit-Lenovo-ideapad-520-15IKB:~$ storm local '/home/amit/Development/storm-material/storm-sample/basic-storm-sample/target/basic-storm-sample-1.0-SNAPSHOT.jar' examples.ex1_HelloWorld.TopologyMain  My-First-Topology
+$ storm local '/home/amit/Development/storm-material/storm-sample/basic-storm-sample/target/basic-storm-sample-1.0-SNAPSHOT.jar' examples.ex1_HelloWorld.TopologyMain  My-First-Topology

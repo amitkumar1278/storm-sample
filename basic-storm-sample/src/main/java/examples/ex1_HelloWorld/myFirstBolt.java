@@ -8,6 +8,9 @@ import org.apache.storm.tuple.Fields;
 import org.apache.storm.tuple.Tuple;
 import org.apache.storm.tuple.Values;
 
+/**
+ * to implement BaseBasicBolt we have to implement 3 methods.
+ */
 public class myFirstBolt extends BaseBasicBolt {
     public void execute(Tuple input,BasicOutputCollector collector) {
         collector.emit(new Values(input.getInteger(0)*2));
