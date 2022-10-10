@@ -207,7 +207,7 @@ Put below parameters in the storm.yaml file.
 # with below config it's not working
 storm.zookeeper.servers:
 - "localhost"
-storm.local.dir: “/home/cloudduggu/storm/data”
+storm.local.dir: “/home/amit/Storm/storm-2.4.0/data”
 nimbus.host: "localhost"
 supervisor.slots.ports:
 - 6700
@@ -216,7 +216,10 @@ supervisor.slots.ports:
 - 6703
 ```
 
-![storm_configuration.png](assets/storm_configuration.png)
+
+![Storm_confg2.png](assets/Storm_confg2.png)
+
+
 
 Press CTRL + O to save the file. Once the file is saved press CTRL+X to exit from the editor.
 
